@@ -7,7 +7,7 @@
         <span class="toolbar-item-spacer"></span>
         <button class="btn border-0 " [matMenuTriggerFor]="userAccountMenu" aria-label="User Account Menu">
             <div class="d-flex">
-                <img class="img img-fluid rounded-circle" src="/assets/icons/man.png" style="height: 2.1rem;">
+                <img class="img img-fluid rounded-circle" src="assets/icons/man.png" style="height: 2.1rem;">
                 <div class="ms-3 my-auto  text-start">
                     <p class="theme-tertiary fw-normal mb-0 lh-1 text-white">{{user}}</p>
                 </div>
@@ -17,7 +17,7 @@
         <mat-menu #userAccountMenu [overlapTrigger]="false" yPosition="below">
             <button mat-menu-item routerLink="/auth/login/admin" (click)="logout()" class="text-center"
                 style="display: flex; align-items: center;">
-                <span class="my-auto d-inline-block"><img src="/assets/icons/logout.png" alt="logout-icon"></span>
+                <span class="my-auto d-inline-block"><img src="assets/icons/logout.png" alt="logout-icon"></span>
                 <span class="my-auto ms-1 line-height-4">Logout</span>
             </button>
         </mat-menu>

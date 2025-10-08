@@ -39,13 +39,13 @@
                         <span class="text-nowrap">
                             <button class="btn border-0 " data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"
                                 *ngIf="tableConfig.isEdit" (click)="editEvent.emit(encodeData(data))"><img
-                                    src="/assets/icons/edit.png" alt="" class="action-img"></button>
+                                    src="assets/icons/edit.png" alt="" class="action-img"></button>
                             <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
                                 *ngIf="tableConfig.isDelete" (click)="confirmDialog(data)"><img
-                                    src="/assets/icons/delete (1).png" alt="" class="action-img"></button>
+                                    src="assets/icons/delete (1).png" alt="" class="action-img"></button>
                             <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
                                 *ngIf="tableConfig.isView" (click)="viewEvent.emit(data)">
-                                <img class="img" src="/assets/icons/view.png" class="action-img"></button>
+                                <img class="img" src="assets/icons/view.png" class="action-img"></button>
                             <!-- <button class="btn border-0" *ngIf="tableConfig.isReject" (click)="rejectDialog(data)"><img
                                     class="img" src="assets/icons/cancel.svg"></button> -->
                         </span>
