@@ -1,0 +1,27 @@
+.form-check-input:checked {
+    background-color: #178e11 !important;
+    border-color: #0d7907 !important;
+}
+
+.form-check-input:focus {
+    border-color: #178e11 !important;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgb(51 110 6 / 25%) !important;
+}
+
+.btn-primary {
+    padding: 1px 18px !important;
+}
+
+.form-check .form-check-input {
+    margin-left: auto !important;
+}
+
+.text-danger {
+font-size: 20px !important;
+}
+
+.form-check-input {
+border-width: 1.4px !important;
+border-color: #78797a !important;
+}

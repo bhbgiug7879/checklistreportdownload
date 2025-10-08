@@ -1,0 +1,27 @@
+<section>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <h5>User Role list</h5>
+      <button routerLink="/admin/userrolemapping/create" mat-raised-button color="accent" type="submit">
+        Create
+      </button>
+    </div>
+        <form>
+      <div class="row row-cols-3">
+        <div class="col">
+          <div class="mb-3">
+            <label class="my-2">User Role:</label>
+            <ng-select class="form-control" [items]="RoleList" bindLabel="role"
+              bindValue="role" placeholder="Select User Role">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+        </form>
+  </div>
+</section>
+
+<app-table [tableModel]="tableModel" [tableData]="userroleList"
+  (editEvent)="router.navigate(['/admin/userrolemapping/edit', $event])"
+  (viewEvent)="router.navigate(['/admin/userrolemapping/details', $event])"
+   [tableConfig]="{isEdit:true,isDelete:true,isView: true}"></app-table>

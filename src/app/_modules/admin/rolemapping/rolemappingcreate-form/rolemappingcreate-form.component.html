@@ -1,0 +1,58 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">S.No</th>
+            <th scope="col" class="text-center">Role</th>
+            <th scope="col">Create</th>
+            <th scope="col">Read</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+            <th scope="col" class="text-center">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let role of RoleList; let i = index">
+            <th class="text-center" scope="row">{{ i + 1 }}</th>
+            <td class="text-center">{{ role.role }}</td>
+
+            <td>
+                <div class="form-check">
+                    <i *ngIf="role.create == false && role.isEditing == false" class="fa fa-times text-danger"></i>
+                    <input *ngIf="role.create !== false || role.isEditing == true" class="form-check-input" type="checkbox"
+                        id="create{{ i }}" [checked]="role.create" [disabled]="!role.isEditing" #createCheckbox
+                        (change)="role.create = createCheckbox.checked" />
+                </div>
+            </td>
+
+            <td>
+                <div class="form-check">
+                    <i *ngIf="role.read == false && role.isEditing == false" class="fa fa-times text-danger"></i>
+                    <input *ngIf="role.read !== false || role.isEditing == true" class="form-check-input" type="checkbox" id="read{{ i }}" [checked]="role.read"
+                        [disabled]="!role.isEditing" #readCheckbox (change)="role.read = readCheckbox.checked" />
+                </div>
+            </td>
+
+            <td>
+                <div class="form-check">
+                    <i *ngIf="role.update == false && role.isEditing == false" class="fa fa-times text-danger"></i>
+                    <input *ngIf="role.update !== false || role.isEditing == true" class="form-check-input" type="checkbox" id="update{{ i }}" [checked]="role.update"
+                        [disabled]="!role.isEditing" #updateCheckbox (change)="role.update = updateCheckbox.checked" />
+                </div>
+            </td>
+
+            <td>
+                <div class="form-check">
+                    <i *ngIf="role.delete == false && role.isEditing == false" class="fa fa-times text-danger"></i>
+                    <input *ngIf="role.delete !== false || role.isEditing == true" class="form-check-input" type="checkbox" id="delete{{ i }}" [checked]="role.delete"
+                        [disabled]="!role.isEditing" #deleteCheckbox (change)="role.delete = deleteCheckbox.checked" />
+                </div>
+            </td>
+            <td class="text-center">
+                <button [disabled]="buttonActive && role.id !== activeRoleId" type="button" class="btn btn-primary py-1" (click)="toggleEdit(role)">
+                    {{ role.isEditing ? 'Save' : 'Edit' }}
+                </button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

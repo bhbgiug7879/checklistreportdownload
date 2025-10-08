@@ -1,0 +1,47 @@
+.table th tr td {
+  padding: 0.7rem 0.7rem;
+}
+.even-row {
+  background-color: #f2f2f2; /* Even row color */
+}
+
+.odd-row {
+  background-color: #dddddd; /* Odd row color */
+}
+
+.action-img {
+width: 16px !important;
+}
+
+.img-cover {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.table {
+  // background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #4c3d001a;
+}
+
+.equal-width-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.equal-width-table td {
+  width: auto;
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+  background-color: white;
+  padding: 18px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 4px;
+}

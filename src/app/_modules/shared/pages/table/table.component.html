@@ -1,0 +1,58 @@
+<div class="table-container">
+    <table class="table table-bordered equal-width-table">
+        <colgroup>
+            <col style="width: 50px;">
+        </colgroup>
+
+        <thead *ngIf="tableData?.length !== 0">
+            <tr class="py-4 table-primary">
+                <th scope="col fs-d" class="p-3">SN</th>
+                <th scope="col" class="fs-d p-3" *ngFor="let data of tableModel">{{ data.title }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of tableData; let i = index;">
+                <td scope="row" class="fw-mb">{{ i + 1 }}</td>
+                <td *ngFor="let model of tableModel" class="fw-mb text-truncate">
+                    <ng-container
+                        *ngIf="model.value !== 'actions' && data[model.value] !== undefined && data[model.value] !== null">
+                        <span>{{ data[model.value] | removeHtmlTags }}</span>
+                    </ng-container>
+                    <!-- <ng-container *ngIf="model.value === 'language'">
+                        {{data[model.value]|uppercase}}
+                    </ng-container> -->
+                    <!-- <ng-template #tableDataWithoutImg>
+                        <ng-container
+                            *ngIf="model.value != 'actions'  && model.type !== 'userType'  && model.value != 'description' && model.value != 'rating' && model.type != 'image' && model.value != 'language'">
+                            {{ data[model.value] | customDataPipe:model }}
+                        </ng-container>
+                        <ng-container *ngIf="model.type == 'image'">
+                            <img class="img img-fluid w-50 text-wrap " [src]="data?.featuredImg?.url">
+                        </ng-container>
+                        <ng-container *ngIf="model.type == 'userType'">
+                            <img *ngIf="data[model.value] === 'GOOGLE'" src="/assets/icons/google.png">
+                            <img *ngIf="data[model.value] === 'user'" src="/assets/icons/user.png" class="img-fluid">
+                            <img *ngIf="data[model.value] === 'apple'" src="/assets/icons/apple.png" alt="Apple Icon">
+                        </ng-container>
+                    </ng-template> -->
+                    <ng-container *ngIf="model.value === 'actions'">
+                        <span class="text-nowrap">
+                            <button class="btn border-0 " data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"
+                                *ngIf="tableConfig.isEdit" (click)="editEvent.emit(encodeData(data))"><img
+                                    src="/assets/icons/edit.png" alt="" class="action-img"></button>
+                            <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
+                                *ngIf="tableConfig.isDelete" (click)="confirmDialog(data)"><img
+                                    src="/assets/icons/delete (1).png" alt="" class="action-img"></button>
+                            <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
+                                *ngIf="tableConfig.isView" (click)="viewEvent.emit(data)">
+                                <img class="img" src="/assets/icons/view.png" class="action-img"></button>
+                            <!-- <button class="btn border-0" *ngIf="tableConfig.isReject" (click)="rejectDialog(data)"><img
+                                    class="img" src="assets/icons/cancel.svg"></button> -->
+                        </span>
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="text-center" *ngIf="tableData?.length === 0">No Data</div>
+</div>

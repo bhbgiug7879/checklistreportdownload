@@ -1,0 +1,57 @@
+<section>
+    <div class="container">
+        <div class="my-3 card px-5 pt-4">
+            <div class="card-header text-center bg-transparent border-0">
+                <h4>USER ROLE ASSIGNING</h4>
+            </div>
+            <form [formGroup]="userRoleform" (ngSubmit)="submitForm()">
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <label>User Name:</label><br>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>User Name</mat-label>
+                            <mat-select formControlName="id" (selectionChange)="onUsernameChange($event.value)">
+                                <mat-option *ngFor="let username of usernameList" [value]="username.id">
+                                    {{ username.employee_Name }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col">
+                        <label>Email:</label><br>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Email</mat-label>
+                            <mat-select formControlName="emailID" [disabled]="isEmailReadonly">
+                                <mat-option *ngFor="let username of usernameList" [value]="username.emailId">
+                                    {{ username.emailId }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col">
+                        <label>Role:</label><br>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <mat-label>Role</mat-label>
+                            <mat-select formControlName="role">
+                                <mat-option *ngFor="let Role of RoleList" [value]="Role.role">
+                                    {{ Role.role }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around my-3">
+                    <button mat-raised-button color="accent" type="submit">
+                        {{this.tabtybe === 'ED' ? 'Update' : 'Submit'}}
+                    </button>
+
+                    <button (click)="goBack()" mat-raised-button color="danger" type="button">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

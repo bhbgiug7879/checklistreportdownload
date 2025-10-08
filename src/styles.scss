@@ -1,0 +1,53 @@
+// 1. Import Angular Material theming utilities
+@use '@angular/material' as mat;
+
+// 2. Define custom palettes
+$my-app-primary: mat.define-palette(mat.$indigo-palette);
+$my-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// 3. Create a theme
+$my-app-theme: mat.define-light-theme((
+  color: (
+    primary: $my-app-primary,
+    accent: $my-app-accent,
+  )
+));
+
+// 4. Apply the theme to all components
+@include mat.all-component-themes($my-app-theme);
+@import "ngx-toastr/toastr";
+
+body {
+padding-right: initial !important;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+  height: auto !important;
+}
+
+.mat-menu-content {
+  padding-top: 0px !important; 
+  padding-bottom: auto !important; 
+  font-size: 16px !important;
+}
+
+.mat-menu-panel {
+  min-height: 47px !important;
+}
+
+.ng-select .ng-select-container {
+border: none !important;
+}
+
+.userselect .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    padding: 4px 10px !important;
+}
+
+.userselect .ng-dropdown-panel .scroll-host {
+    height: 95px !important;
+}
+
+.userselect .ng-dropdown-panel.ng-select-bottom {
+    height: 95px !important;
+}

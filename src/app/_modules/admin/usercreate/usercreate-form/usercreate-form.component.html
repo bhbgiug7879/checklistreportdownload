@@ -1,0 +1,54 @@
+<section class="usercreate-section">
+    <div class="container">
+        <div class="card p-4">
+            <!-- {{UsercreateForm.value | json}} -->
+            <div class="card-header bg-transparent border-0 text-center">
+                <h4>CREATE USER</h4>
+            </div>
+            <form [formGroup]="UsercreateForm" (ngSubmit)="submitForm()">
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <label class="mb-2" for="">User Name:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>User Name</mat-label>
+                            <input type="text" matInput placeholder="User Name" formControlName="name">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <label class="mb-2" for="">Email:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input type="text" matInput placeholder="Email" formControlName="emailId">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <label class="mb-2" for="">Password:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input type="text" matInput placeholder="Password" formControlName="password">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <label class="mb-2" for="">User Type:</label>
+                        <mat-form-field class="select-input-field" appearance="outline">
+                            <mat-select formControlName="developId" [(value)]="selected" placeholder="User Type">
+                                <mat-option *ngFor="let developer of developerTypes"
+                                    [value]="developer.developId">{{developer.description}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-around my-3">
+                    <button mat-raised-button color="accent" type="submit" [disabled]="this.tabtybe === 'RE'">
+                        {{this.tabtybe === 'ED' ? 'Update' : 'Submit'}}
+                    </button>
+
+                    <button (click)="goBack()" mat-raised-button color="danger" type="button">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>

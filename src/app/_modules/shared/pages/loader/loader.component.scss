@@ -1,0 +1,66 @@
+/* Fullscreen overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(74, 74, 74, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+/* Loader container */
+.load {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer wrapper for rotation */
+.loader-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotating red circle */
+.circle-bg {
+  position: absolute;
+  width: 103px;
+  height: 103px;
+  border-radius: 50%;
+  background: rgb(247, 244, 244);
+  animation: rotateCircle 2s linear infinite;
+  z-index: 1;
+  filter: brightness(0.5);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* Center image stays still */
+.loader-circle img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: contain;
+  z-index: 2;
+  position: relative;
+}
+
+/* Rotation animation */
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+

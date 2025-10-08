@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+        <div class="d-flex justify-content-between align-items-center my-3">
+      <h5>Project list</h5>
+      <button routerLink="/admin/project_create/create" mat-raised-button color="accent" type="submit">
+        Create
+      </button>
+    </div>
+  </div>
+</section>
+<app-table [tableModel]="tableModel" [tableData]="projectList"
+  (editEvent)="router.navigate(['/admin/project_create/edit', $event])"
+  (viewEvent)="router.navigate(['/admin/project_create/details', $event])"
+  (deleteEvent)="deletecheckList([$event.id])" [tableConfig]="{isEdit:true,isDelete:true,isView: true}"></app-table>
+
+<app-paginator [length]="ds.getFormControl(projectlistForm, 'page.length')"
+  [pageIndex]="ds.getFormControl(projectlistForm, 'page.pageNumber')"
+  [pageSize]="ds.getFormControl(projectlistForm, 'page.pageSize')" (changeEvent)="getprojectlistData()">
+</app-paginator>

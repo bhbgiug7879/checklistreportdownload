@@ -1,0 +1,53 @@
+<section>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <h5>Check list</h5>
+      <button routerLink="/admin/checklist_create/create" mat-raised-button color="accent" type="submit">
+        Create
+      </button>
+    </div>
+    <form [formGroup]="Filterform" (ngSubmit)="submitForm()">
+      <div class="row row-cols-3">
+        <div class="col">
+          <div class="mb-3">
+            <label class="my-2">ProjectID:</label>
+            <ng-select formControlName="projectId" class="form-control" [items]="checkList" bindLabel="projectId"
+              bindValue="projectId" placeholder="Select ProjectID">
+            </ng-select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label class="my-2">Developer Type:</label>
+            <ng-select formControlName="developerType" class="form-control" [items]="developerTypes"
+              bindLabel="description" bindValue="developId" placeholder="Select Developer Type">
+            </ng-select>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-3">
+            <label class="my-2">Developer Name:</label>
+            <ng-select formControlName="developerName" class="form-control border-0" [items]="checkList" bindLabel=""
+              bindValue="" placeholder="Select Developer Name">
+            </ng-select>
+          </div>
+        </div>
+      </div>
+      <div class="text-center my-3">
+        <button mat-raised-button color="accent" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<app-table [tableModel]="tableModel" [tableData]="checkList"
+  (editEvent)="router.navigate(['/admin/checklist_create/edit', $event])"
+  (viewEvent)="router.navigate(['/admin/checklist_create/details', $event])"
+   [tableConfig]="{isEdit:true,isDelete:false,isView: true}"></app-table>
+
+<app-paginator [length]="ds.getFormControl(checklistForm, 'page.length')"
+  [pageIndex]="ds.getFormControl(checklistForm, 'page.pageNumber')"
+  [pageSize]="ds.getFormControl(checklistForm, 'page.pageSize')" (changeEvent)="getChecklistData()">
+</app-paginator>

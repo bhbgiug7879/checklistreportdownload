@@ -1,0 +1,39 @@
+
+
+      .mat-form-field {
+        width: 100%;
+        min-width: 300px;
+      }
+
+      .mat-card {
+        position: absolute !important;
+        top: 25%;
+        left: 10%;
+      }
+
+      mat-card-title,
+      mat-card-content {
+        display: flex;
+        justify-content: center;
+      }
+
+      .error {
+        padding: 16px;
+        width: 300px;
+        color: white;
+        background-color: red;
+      }
+
+      .button {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .main-login {
+        background-image: url(/assets/images/loginbg.jpg);
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }

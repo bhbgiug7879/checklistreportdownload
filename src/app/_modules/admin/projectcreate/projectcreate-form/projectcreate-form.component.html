@@ -1,0 +1,135 @@
+<section>
+    <div class="container">
+        <div class="my-3 card px-5 pt-4">
+            <div class="card-header text-center bg-transparent border-0">
+                <h4>CHECKLIST PREPARATIONS</h4>
+            </div>
+            <form [formGroup]="Reportsform" (ngSubmit)="submitForm()">
+                <div class="row row-cols-2">
+                    <div class="col">
+                        <label>Work Name:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Work Name</mat-label>
+                            <input type="text" matInput formControlName="workName" placeholder="Work Name" />
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col">
+                        <label>Project Name:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Project Name</mat-label>
+                            <mat-select formControlName="projectId" (selectionChange)="onProjectChange($event.value)">
+                                <mat-option *ngFor="let project of projectList" [value]="project.projectId">
+                                    {{ project.projectsName }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- <div class="col">
+                        <label>Project Id:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Project Id</mat-label>
+                            <input readonly type="number" matInput formControlName="projectId"
+                                placeholder="Project Id" />
+                        </mat-form-field>
+                    </div> -->
+
+                    <div class="col">
+                        <label>Frontend Developer Name:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Frontend Developer Name</mat-label>
+                            <input matInput formControlName="frontendDeveloperName"
+                                placeholder="Frontend Developer Name" readonly />
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col">
+                        <label>Backend Developer Name:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Backend Developer Name</mat-label>
+                            <input matInput formControlName="backentDeveloperName" placeholder="Backend Developer Name"
+                                readonly />
+                        </mat-form-field>
+                    </div>
+
+                    <div class="col">
+                        <label>Project Manager Name:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Project Manager Name</mat-label>
+                            <input matInput formControlName="managerName" placeholder="Manager Name" readonly />
+                        </mat-form-field>
+                    </div>
+
+
+                    <div class="col">
+                        <label>Tested By:</label>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Tested By</mat-label>
+                            <input type="text" matInput formControlName="testedBy" placeholder="Tested By" />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- Task List -->
+                <div class="task-form mt-4">
+                    <button mat-raised-button color="primary" type="button" (click)="addTask()">
+                        + Add Task
+                    </button>
+
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width:100%">
+
+                        <!-- Task Name -->
+                        <ng-container matColumnDef="taskName">
+                            <th class="text-center" mat-header-cell *matHeaderCellDef> Task Name </th>
+                            <td class="text-center" mat-cell *matCellDef="let task; let i = index" [formGroup]="task">
+                                <mat-form-field appearance="outline" style="width:100%">
+                                    <input matInput placeholder="Enter task name" formControlName="taskName" />
+                                </mat-form-field>
+                            </td>
+                        </ng-container>
+
+                        <!-- Verified (Status) -->
+                        <ng-container matColumnDef="verified">
+                            <th class="text-center" mat-header-cell *matHeaderCellDef> Status </th>
+                            <td class="text-center" mat-cell *matCellDef="let task" [formGroup]="task">
+                                <mat-checkbox color="primary" formControlName="verified"></mat-checkbox>
+                            </td>
+                        </ng-container>
+
+                        <!-- Tested -->
+                        <ng-container matColumnDef="tested">
+                            <th class="text-center" mat-header-cell *matHeaderCellDef> Tested </th>
+                            <td class="text-center" mat-cell *matCellDef="let task" [formGroup]="task">
+                                <mat-checkbox color="accent" formControlName="tested"></mat-checkbox>
+                            </td>
+                        </ng-container>
+
+                        <!-- Action -->
+                        <ng-container matColumnDef="action">
+                            <th class="text-center" mat-header-cell *matHeaderCellDef> Action </th>
+                            <td class="text-center" mat-cell *matCellDef="let task; let i = index">
+                                <button mat-raised-button color="warn" type="button" (click)="removeTask(i)">
+                                    Delete
+                                </button>
+                            </td>
+                        </ng-container>
+
+                        <tr mat-header-row *matHeaderRowDef="['taskName','verified','tested','action']"></tr>
+                        <tr mat-row *matRowDef="let row; columns: ['taskName','verified','tested','action']"></tr>
+                    </table>
+
+                    <div class="d-flex justify-content-around my-3">
+                        <button mat-raised-button color="accent" type="submit">
+                            {{this.tabtybe === 'ED' ? 'Update' : 'Submit'}}
+                        </button>
+
+                        <button (click)="goBack()" mat-raised-button color="danger" type="button">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
