@@ -37,7 +37,7 @@
 <app-table [tableModel]="tableModel" [tableData]="userList"
   (editEvent)="router.navigate(['/admin/user_create/edit', $event])"
   (viewEvent)="router.navigate(['/admin/user_create/details', $event])"
-  (deleteEvent)="deletecheckList([$event.id])" [tableConfig]="{isEdit:true,isDelete:true,isView: true}"></app-table>
+  (deleteEvent)="deletecheckList([$event.id])" [tableConfig]="{isEdit:true,isDelete:true,isView: true,ispdfDownload: false}"></app-table>
 
 <app-paginator 
   [length]="ds.getuserFormControl(userlistForm, 'length')?.value"

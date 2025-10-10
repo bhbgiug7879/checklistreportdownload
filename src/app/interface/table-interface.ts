@@ -10,6 +10,7 @@ export interface ITABLE_CONFIG {
     isEdit?: boolean, // default false - Make this true to get edit event button 
     isDelete?: boolean, // default false - Make this true to get Delete event button 
     isView?: boolean, // default false - Make this true to get more event button 
+    ispdfDownload?: boolean, // default false - Make this true to get more event button 
     isPrint?: boolean, // default false - Make this true to get print event button 
     isDetails?: boolean, // default false - Make this true to get details event button 
     isAccept?: boolean, // default false - Make this true to get Accept event button 

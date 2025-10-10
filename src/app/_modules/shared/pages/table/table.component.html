@@ -46,8 +46,10 @@
                             <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
                                 *ngIf="tableConfig.isView" (click)="viewEvent.emit(data)">
                                 <img class="img" src="assets/icons/view.png" class="action-img"></button>
-                            <!-- <button class="btn border-0" *ngIf="tableConfig.isReject" (click)="rejectDialog(data)"><img
-                                    class="img" src="assets/icons/cancel.svg"></button> -->
+                                <!-- pdf download -->
+                            <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
+                                *ngIf="tableConfig.ispdfDownload" (click)="pdfDownloadEvent.emit(data)">
+                                <img class="img" src="assets/icons/pdf.png" class="action-img"></button>
                         </span>
                     </ng-container>
                 </td>

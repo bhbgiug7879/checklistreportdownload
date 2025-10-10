@@ -9,6 +9,7 @@ export interface IWORK {
   workLists: IWORKLIST[];
   additionalDetails: string;
   date: number;
+  id: number
 }
 
 export interface IWORKLIST {

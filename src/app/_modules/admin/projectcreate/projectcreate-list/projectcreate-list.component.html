@@ -45,7 +45,8 @@
 <app-table [tableModel]="tableModel" [tableData]="checkList"
   (editEvent)="router.navigate(['/admin/checklist_create/edit', $event])"
   (viewEvent)="router.navigate(['/admin/checklist_create/details', $event])"
-   [tableConfig]="{isEdit:true,isDelete:false,isView: true}"></app-table>
+  (pdfDownloadEvent)="downloadPdf($event.id, checkList)"
+   [tableConfig]="{isEdit:true,isDelete:false,isView: true, ispdfDownload: true}"></app-table>
 
 <app-paginator [length]="ds.getFormControl(checklistForm, 'page.length')"
   [pageIndex]="ds.getFormControl(checklistForm, 'page.pageNumber')"

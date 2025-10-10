@@ -182,7 +182,7 @@ createWorkListItem(item?: any): FormGroup {
     this.apiservice.post(URLS.projectList, this.projectForm.value).pipe(takeUntil(this.unSubscribe$)).subscribe((res: any) => {
       if (res) {
         this.projectList = res.response;
-        this.toast.success(res.message, 'Success');
+        // this.toast.success(res.message, 'Success');
       } else {
         this.toast.error(res.message, 'Error');
       }

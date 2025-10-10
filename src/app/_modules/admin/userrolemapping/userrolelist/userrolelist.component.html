@@ -24,4 +24,4 @@
 <app-table [tableModel]="tableModel" [tableData]="userroleList"
   (editEvent)="router.navigate(['/admin/userrolemapping/edit', $event])"
   (viewEvent)="router.navigate(['/admin/userrolemapping/details', $event])"
-   [tableConfig]="{isEdit:true,isDelete:true,isView: true}"></app-table>
+   [tableConfig]="{isEdit:true,isDelete:true,isView: true,ispdfDownload: false}"></app-table>

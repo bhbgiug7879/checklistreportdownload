@@ -16,6 +16,7 @@ export class TableComponent implements OnInit {
 @Output() editEvent = new EventEmitter<any>();
 @Output() deleteEvent = new EventEmitter<any>();
 @Output() viewEvent = new EventEmitter<any>();
+@Output() pdfDownloadEvent = new EventEmitter<any>();
 
   constructor(public dialog: MatDialog, public ds: DependencyService) { }
 
