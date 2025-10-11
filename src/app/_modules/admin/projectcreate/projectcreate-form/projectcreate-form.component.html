@@ -117,10 +117,10 @@
 
                         <tr mat-header-row *matHeaderRowDef="['taskName','verified','tested','action']"></tr>
                         <tr mat-row *matRowDef="let row; columns: ['taskName','verified','tested','action']"></tr>
-                    </table>
+                  </table>
 
                     <div class="d-flex justify-content-around my-3">
-                        <button mat-raised-button color="accent" type="submit">
+                        <button mat-raised-button color="accent" type="submit" [disabled]="this.tabtybe === 'RE'">
                             {{this.tabtybe === 'ED' ? 'Update' : 'Submit'}}
                         </button>
 

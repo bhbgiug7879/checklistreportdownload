@@ -44,7 +44,7 @@
                                 *ngIf="tableConfig.isDelete" (click)="confirmDialog(data)"><img
                                     src="assets/icons/delete (1).png" alt="" class="action-img"></button>
                             <button class="btn border-0 p-2" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
-                                *ngIf="tableConfig.isView" (click)="viewEvent.emit(data)">
+                                *ngIf="tableConfig.isView" (click)="viewEvent.emit(encodeData(data))">
                                 <img class="img" src="assets/icons/view.png" class="action-img"></button>
                                 <!-- pdf download -->
                             <button class="btn border-0 p-2" data-bs-toggle="tooltip" data-bs-placement="top" title="View"

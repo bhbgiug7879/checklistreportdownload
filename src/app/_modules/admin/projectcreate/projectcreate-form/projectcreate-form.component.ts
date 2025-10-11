@@ -72,7 +72,6 @@ export class ProjectcreateFormComponent implements OnInit {
           console.error('Decoding failed:', err, encodedData);
         }
       }
-
       if (this.tabtybe === 'ED') {
         this.patchForm();
       } else if (this.tabtybe === 'RE') {

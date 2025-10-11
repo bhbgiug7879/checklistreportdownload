@@ -47,7 +47,7 @@
 
                 </div>
                 <div class="d-flex justify-content-around my-3">
-                    <button mat-raised-button color="accent" type="submit">
+                    <button mat-raised-button color="accent" type="submit" [disabled]="this.tabtybe === 'RE'">
                         {{this.tabtybe === 'ED' ? 'Update' : 'Submit'}}
                     </button>
 
