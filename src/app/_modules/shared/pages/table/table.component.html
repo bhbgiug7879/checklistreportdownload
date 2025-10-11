@@ -37,17 +37,17 @@
                     </ng-template> -->
                     <ng-container *ngIf="model.value === 'actions'">
                         <span class="text-nowrap">
-                            <button class="btn border-0 " data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"
+                            <button class="btn border-0 p-2 " data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"
                                 *ngIf="tableConfig.isEdit" (click)="editEvent.emit(encodeData(data))"><img
                                     src="assets/icons/edit.png" alt="" class="action-img"></button>
-                            <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
+                            <button class="btn border-0 p-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"
                                 *ngIf="tableConfig.isDelete" (click)="confirmDialog(data)"><img
                                     src="assets/icons/delete (1).png" alt="" class="action-img"></button>
-                            <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
+                            <button class="btn border-0 p-2" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
                                 *ngIf="tableConfig.isView" (click)="viewEvent.emit(data)">
                                 <img class="img" src="assets/icons/view.png" class="action-img"></button>
                                 <!-- pdf download -->
-                            <button class="btn border-0" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
+                            <button class="btn border-0 p-2" data-bs-toggle="tooltip" data-bs-placement="top" title="View"
                                 *ngIf="tableConfig.ispdfDownload" (click)="pdfDownloadEvent.emit(data)">
                                 <img class="img" src="assets/icons/pdf.png" class="action-img"></button>
                         </span>
