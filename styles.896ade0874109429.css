@@ -2392,6 +2392,36 @@ body {
 .mat-form-field-appearance-outline .mat-form-field-infix {
   padding: 0.5em 0 1em 0 !important;
 }
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.mat-input-element {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.mat-form-field {
+  font-weight: 100 !important;
+  font-size: 14px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: rgba(0, 0, 0, 0.87) !important;
+  opacity: 0.1 !important;
+}
+
+.ng-select .ng-select-container:hover {
+  box-shadow: none !important;
+}
+
+.form-control {
+  padding: 3px !important;
+  border: 2px solid #ededed !important;
+}
 /*!********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[0].use[2]!./node_modules/@angular/material/prebuilt-themes/indigo-pink.css ***!
   \********************************************************************************************************************************************************************************************************************************************************/
