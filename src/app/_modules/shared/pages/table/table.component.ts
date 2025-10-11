@@ -26,15 +26,21 @@ export class TableComponent implements OnInit {
   }
 
 
-    encodeData(data: any): string {
-      debugger
-    try {
-      return encodeURIComponent(btoa(JSON.stringify(data)));
-    } catch (e) {
-      console.error('Encoding failed', e);
-      return '';
-    }
+encodeData(data: any): string {
+  try {
+    // Encode Unicode safely
+    const jsonStr = JSON.stringify(data);
+    const utf8Bytes = encodeURIComponent(jsonStr).replace(
+      /%([0-9A-F]{2})/g,
+      (_, p1) => String.fromCharCode(parseInt(p1, 16))
+    );
+    return btoa(utf8Bytes);
+  } catch (e) {
+    console.error('Encoding failed', e);
+    return '';
   }
+}
+
 
     confirmDialog(data: any): void {
     const message = `Are you sure you want to delete this?`;

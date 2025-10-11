@@ -81,7 +81,7 @@ export class PdfService {
         const projectData = [
           ['Work Name', item.workName || 'N/A'],
           ['Project Name', item.projectName || 'N/A'],
-          ['Date', item.date ? this.formatDate(item.date) : 'N/A']
+          ['Date', item.date ? new Date().toLocaleString() : 'N/A']
         ];
 
         const teamData = [
