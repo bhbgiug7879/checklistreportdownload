@@ -6,19 +6,16 @@ $my-app-primary: mat.define-palette(mat.$indigo-palette);
 $my-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // 3. Create a theme
-$my-app-theme: mat.define-light-theme((
-  color: (
-    primary: $my-app-primary,
-    accent: $my-app-accent,
-  )
-));
+$my-app-theme: mat.define-light-theme((color: (primary: $my-app-primary,
+        accent: $my-app-accent,
+      )));
 
 // 4. Apply the theme to all components
 @include mat.all-component-themes($my-app-theme);
 @import "ngx-toastr/toastr";
 
 body {
-padding-right: initial !important;
+  padding-right: initial !important;
 }
 
 .mat-drawer-inner-container {
@@ -27,8 +24,8 @@ padding-right: initial !important;
 }
 
 .mat-menu-content {
-  padding-top: 0px !important; 
-  padding-bottom: auto !important; 
+  padding-top: 0px !important;
+  padding-bottom: auto !important;
   font-size: 16px !important;
 }
 
@@ -37,21 +34,51 @@ padding-right: initial !important;
 }
 
 .ng-select .ng-select-container {
-border: none !important;
+  border: none !important;
 }
 
 .userselect .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
-    padding: 4px 10px !important;
+  padding: 4px 10px !important;
 }
 
 .userselect .ng-dropdown-panel .scroll-host {
-    height: 95px !important;
+  height: 95px !important;
 }
 
 .userselect .ng-dropdown-panel.ng-select-bottom {
-    height: 95px !important;
+  height: 95px !important;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 0.5em 0 1em 0 !important;
+  padding: 0.5em 0 1em 0 !important;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.mat-input-element {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.mat-form-field {
+  font-weight: 100 !important;
+  font-size: 14px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: rgb(0 0 0 / 87%) !important;
+    opacity: 0.1 !important;
+}
+
+.ng-select .ng-select-container:hover {
+box-shadow: none !important;
+}
+
+ .form-control {
+      padding: 3px !important;
+      border: 2px solid #ededed !important;
 }

@@ -73,17 +73,13 @@
 
                 <!-- Task List -->
                 <div class="task-form mt-4">
-                    <button mat-raised-button color="primary" type="button" (click)="addTask()">
-                        + Add Task
-                    </button>
 
                     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width:100%">
-
                         <!-- Task Name -->
                         <ng-container matColumnDef="taskName">
                             <th class="text-center" mat-header-cell *matHeaderCellDef> Task Name </th>
                             <td class="text-center" mat-cell *matCellDef="let task; let i = index" [formGroup]="task">
-                                <mat-form-field appearance="outline" style="width:100%">
+                                <mat-form-field class="mt-2" appearance="outline" style="width:100%">
                                     <input matInput placeholder="Enter task name" formControlName="taskName" />
                                 </mat-form-field>
                             </td>
@@ -117,14 +113,17 @@
 
                         <tr mat-header-row *matHeaderRowDef="['taskName','verified','tested','action']"></tr>
                         <tr mat-row *matRowDef="let row; columns: ['taskName','verified','tested','action']"></tr>
-                  </table>
+                    </table>
 
-                    <div class="d-flex justify-content-around my-3">
-                        <button mat-raised-button color="accent" type="submit" [disabled]="this.tabtybe === 'RE'">
+                    <div class="d-flex justify-content-between my-3">
+                        <button mat-raised-button color="primary" type="button" (click)="addTask()">
+                            + Add Task
+                        </button>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="this.tabtybe === 'RE'">
                             {{this.tabtybe === 'ED' ? 'Update' : 'Submit'}}
                         </button>
 
-                        <button (click)="goBack()" mat-raised-button color="danger" type="button">
+                        <button (click)="goBack()" mat-raised-button color="warn" type="button">
                             Cancel
                         </button>
                     </div>
