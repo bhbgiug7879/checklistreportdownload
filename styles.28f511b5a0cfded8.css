@@ -2388,6 +2388,10 @@ body {
 .userselect .ng-dropdown-panel.ng-select-bottom {
   height: 95px !important;
 }
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.5em 0 1em 0 !important;
+}
 /*!********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].rules[0].oneOf[0].use[2]!./node_modules/@angular/material/prebuilt-themes/indigo-pink.css ***!
   \********************************************************************************************************************************************************************************************************************************************************/
